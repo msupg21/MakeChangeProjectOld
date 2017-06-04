@@ -7,12 +7,11 @@ public class MakeChangeProject {
 
 	public static Scanner kb = new Scanner(System.in);
 	public static DecimalFormat money = new DecimalFormat();
-	public static double changeDue, twenties;
 
 	public static void main(String[] args) {
 		double changeDue = validPurchase();
 		if (changeDue > 0) {
-			System.out.print("Let me get you your change...\n");
+			System.out.println("Let me get you your change...\n");
 		} else {
 			System.out.println();
 		}
@@ -115,7 +114,7 @@ public class MakeChangeProject {
 				System.out.println("Great, have a nice day!");
 			} else if (balance < 0.0) {
 				System.out.println("Sorry but you are short some cash :(");
-				System.out.println("What you have cost money, so cough up!");
+				System.out.println("What you have cost money, so cough up!\n50");
 			} else if (balance > 0.0) {
 				System.out.println("Ok I owe you some change.");
 			}
