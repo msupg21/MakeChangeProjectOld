@@ -7,17 +7,75 @@ public class MakeChangeProject {
 
 	public static Scanner kb = new Scanner(System.in);
 	public static DecimalFormat money = new DecimalFormat();
-	public static double changeDue;
+	public static double changeDue, twenties;
 
 	public static void main(String[] args) {
 		double changeDue = validPurchase();
 		if (changeDue > 0) {
-			System.out.print("Let me get you your change...");
+			System.out.print("Let me get you your change...\n");
 		} else {
 			System.out.println();
 		}
-		int twentyD = 0, tenD = 0, fiveD = 0, oneD = 0, quarters = 0, 
-			dimes = 0, nickels = 0, pennies = 0;
+
+		int changeDue1 = (int) (changeDue * 100);
+		int changeDown = changeDue1;
+
+		int twenties = 0, tens = 0, fives = 0, ones = 0, quarters = 0, dimes = 0, nickels = 0, pennies = 0;
+
+		if (changeDue1 >= 2000) {
+			twenties = changeDue1 / 2000;
+			if (twenties == 1) {
+				System.out.println(twenties + " twenty");
+			} else if (twenties > 1) {
+				System.out.println(twenties + " twenties");
+			}
+		
+			changeDue1 = changeDown - (twenties * 2000);
+
+			if (changeDue1 >= 1000) {
+				tens = changeDue1 / 1000;
+				System.out.println(tens + " tens");
+			}
+
+			changeDue1 = changeDown - ((twenties * 2000) + (tens * 1000));
+
+			if (changeDue1 >= 500) {
+				fives = changeDue1 / 500;
+				System.out.println(fives + " fives");
+			}
+
+			changeDue1 = changeDown - ((twenties * 2000) + (tens * 1000) + (fives * 500));
+
+			if (changeDue1 >= 100) {
+				ones = changeDue1 / 100;
+				System.out.println(ones + " ones");
+			}
+
+			changeDue1 = changeDown - ((twenties * 2000) + (tens * 1000) + (fives * 500) + (ones * 100));
+
+			if (changeDue1 >= 25) {
+				quarters = changeDue1 / 25;
+				System.out.println(quarters + " quarters");
+			}
+			changeDue1 = changeDown
+					- ((twenties * 2000) + (tens * 1000) + (fives * 500) + (ones * 100) + (quarters * 25));
+			if (changeDue1 >= 10) {
+				dimes = changeDue1 / 10;
+				System.out.println(dimes + " dimes");
+			}
+			changeDue1 = changeDown - ((twenties * 2000) + (tens * 1000) + (fives * 500) + (ones * 100)
+					+ (quarters * 25) + (dimes * 10));
+			if (changeDue1 >= 5) {
+				nickels = changeDue1 / 5;
+				System.out.println(nickels + " nickels");
+			}
+			changeDue1 = changeDown - ((twenties * 2000) + (tens * 1000) + (fives * 500) + (ones * 100)
+					+ (quarters * 25) + (dimes * 10) + (nickels * 5));
+			if (changeDue1 >= 1) {
+				pennies = changeDue1 / 1;
+				System.out.println(pennies + " pennies");
+			}
+		}
 	}
 
 	public static double validPurchase() {
