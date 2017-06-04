@@ -29,53 +29,71 @@ public class MakeChangeProject {
 			} else if (twenties > 1) {
 				System.out.println(twenties + " twenties");
 			}
-		
 			changeDue1 = changeDown - (twenties * 2000);
 
-			if (changeDue1 >= 1000) {
-				tens = changeDue1 / 1000;
-				System.out.println(tens + " tens");
-			}
-
+		}
+		if (changeDue1 >= 1000) {
+			tens = changeDue1 / 1000;
+			System.out.println(tens + " ten");
 			changeDue1 = changeDown - ((twenties * 2000) + (tens * 1000));
+		}
 
-			if (changeDue1 >= 500) {
-				fives = changeDue1 / 500;
-				System.out.println(fives + " fives");
-			}
-
+		if (changeDue1 >= 500) {
+			fives = changeDue1 / 500;
+			System.out.println(fives + " five");
 			changeDue1 = changeDown - ((twenties * 2000) + (tens * 1000) + (fives * 500));
+		}
 
-			if (changeDue1 >= 100) {
-				ones = changeDue1 / 100;
+		if (changeDue1 >= 100) {
+			ones = changeDue1 / 100;
+			if (ones == 1) {
+				System.out.println(ones + " one");
+			} else if (ones > 1) {
 				System.out.println(ones + " ones");
 			}
-
 			changeDue1 = changeDown - ((twenties * 2000) + (tens * 1000) + (fives * 500) + (ones * 100));
+		}
 
-			if (changeDue1 >= 25) {
-				quarters = changeDue1 / 25;
+		if (changeDue1 >= 25) {
+			quarters = changeDue1 / 25;
+			if (quarters == 1) {
+				System.out.println(quarters + " quarter");
+			} else if (quarters > 1) {
 				System.out.println(quarters + " quarters");
 			}
 			changeDue1 = changeDown
 					- ((twenties * 2000) + (tens * 1000) + (fives * 500) + (ones * 100) + (quarters * 25));
-			if (changeDue1 >= 10) {
-				dimes = changeDue1 / 10;
+		}
+
+		if (changeDue1 >= 10) {
+			dimes = changeDue1 / 10;
+			if (dimes == 1) {
+				System.out.println(dimes + " dime");
+			} else if (dimes > 1) {
 				System.out.println(dimes + " dimes");
 			}
+
 			changeDue1 = changeDown - ((twenties * 2000) + (tens * 1000) + (fives * 500) + (ones * 100)
 					+ (quarters * 25) + (dimes * 10));
-			if (changeDue1 >= 5) {
-				nickels = changeDue1 / 5;
-				System.out.println(nickels + " nickels");
-			}
+		}
+
+		if (changeDue1 >= 5) {
+			nickels = changeDue1 / 5;
+			System.out.println(nickels + " nickel");
 			changeDue1 = changeDown - ((twenties * 2000) + (tens * 1000) + (fives * 500) + (ones * 100)
 					+ (quarters * 25) + (dimes * 10) + (nickels * 5));
-			if (changeDue1 >= 1) {
-				pennies = changeDue1 / 1;
+		}
+
+		if (changeDue1 >= 1) {
+			pennies = changeDue1 / 1;
+			if (pennies == 1) {
+				System.out.println(pennies + " penny");
+			} else if (pennies > 1) {
 				System.out.println(pennies + " pennies");
 			}
+
 		}
+		System.out.println("\nThank you, come again! * In Abu voice *");
 	}
 
 	public static double validPurchase() {
