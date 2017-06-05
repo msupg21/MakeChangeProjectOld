@@ -114,7 +114,7 @@ public class MakeChangeProject {
 				System.out.println("Great, have a nice day!");
 			} else if (balance < 0.0) {
 				System.out.println("Sorry but you are short some cash :(");
-				System.out.println("What you have cost money, so cough up!\n50");
+				System.out.println("What you have cost money, so cough up!\n");
 			} else if (balance > 0.0) {
 				System.out.println("Ok I owe you some change.");
 			}
